@@ -1,12 +1,20 @@
 version: '3.0'
 
 services:
-  frontend:
+  development:
     build:
       context: .
-      args:
-        app_env: ${APP_ENV}
-    volumes:
-      - ./frontend/src:/frontend/src 
+      dockerfile: ./docker/development/Dockerfile
     ports:
-      - "3000:3000"
+     - "5000:5000"
+    volumes:
+     - .:/development
+
+  production:
+    build:
+      context: .
+      dockerfile: ./docker/production/Dockerfile
+    ports:
+     - "6000:6000"
+    volumes:
+     - .:/production
