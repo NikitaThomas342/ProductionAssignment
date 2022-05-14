@@ -6,7 +6,7 @@ ENV APP_ENV $app_env
 
 RUN mkdir -p /frontend
 WORKDIR /frontend
-COPY ./frontend ./
+COPY . .
 
 RUN npm install
 
