@@ -3,7 +3,7 @@ version: '3.0'
 services:
   frontend:
     build:
-      context: ./frontend
+      context: .
       args:
         app_env: ${APP_ENV}
     volumes:
