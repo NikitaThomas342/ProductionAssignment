@@ -1,0 +1,15 @@
+FROM node:16.13.1-alpine3.12 as build
+
+WORKDIR /development 
+
+COPY ./package.json /development/
+
+COPY ./yarn.lock /development/
+
+RUN yarn --frozen-lockfile
+
+COPY . .
+
+EXPOSE 3000
+
+CMD [ "yarn", "dev" ]

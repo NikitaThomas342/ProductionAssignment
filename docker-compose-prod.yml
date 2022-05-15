@@ -4,7 +4,7 @@ services:
   production:
     build:
       context: .
-      dockerfile: ./docker/production/Dockerfile
+      dockerfile: ./Dockerfile.prod
     ports:
     - "80:80"
     volumes:
